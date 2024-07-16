@@ -16,7 +16,12 @@ response = requests.get('https://api.openweathermap.org/data/2.5/weather', param
 
 if response.status_code == 200:
     data = response.json()
-    for i in data['weather']:
-        print(i)
-    weather_description = data['weather']
-    print(weather_description)
+    
+    lon = data['coord']['lon'] 
+    lat = data['coord']['lat']
+
+    lon_dir = 'E' if lon > 0 else 'W'
+    lat_dir = 'N' if lat > 0 else 'S'
+        
+    print(f"The coordinates of {city} are {abs(lat)}° {lat_dir} latitude and {abs(lon)}° {lon_dir} longitude.")
+# coord, weather, base, main, visibility, wind, clouds, dt, sys, timezone, id, name, cod
