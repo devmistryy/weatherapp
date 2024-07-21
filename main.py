@@ -57,3 +57,4 @@ else:
 
 # coord, weather, base, main, visibility, wind, clouds, dt, sys, timezone, id, name, cod
 
+#nerjdfnveroifv
