@@ -19,6 +19,7 @@ def compute(response):
     
     weather_verb = ""
     desc_verb = ""
+    desp = ""
 
     # desc_verb =  description in desc_plural
 
