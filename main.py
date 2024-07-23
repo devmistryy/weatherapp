@@ -10,7 +10,7 @@ response = None
 data = None
 
 #this is used for the beginning of the program
-print("Hello, welcome to the terminal weather app!")
+print("Hello, welcome to the terminal based weather app!")
 
 #this gets updated within the while loop
 city = input("Please enter city: ")
@@ -57,11 +57,9 @@ if loop_ran: reconstruct()
 
 if response.status_code == 200:
     compute.compute(response)
-    print(type(response))
-    print(type(data))
+
 else:
     print("Connection Error.")
 
 # coord, weather, base, main, visibility, wind, clouds, dt, sys, timezone, id, name, cod
 
-#nerjdfnveroifv

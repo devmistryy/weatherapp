@@ -1,14 +1,32 @@
-def reconstruct():
-    params = {'q' : city,  'appid' : api_key,  'units' : 'metric' }
-    response = requests.get('https://api.openweathermap.org/data/2.5/weather', params=params)
-    data = response.json()
-    print("3")
-
 def compute(response):
     data = response.json()
 
-    print(data['weather'])
+    '''
+    for i in data:
+        print(i, end = ': ')
+        print(data[i])
+    '''
+        
+    weather = data['weather'][0]['main']
+    description = data['weather'][0]['description']
+    temp_c = data['main']['temp']
+    temp_f = (temp_c * 1.8) + 32
+
+    weather_plural = ['Clouds']
+    weather_single = ['Clear', 'Thunderstorm']
+    desc_plural = ['few clouds', 'scattered clouds', 'broken clouds', 'overcast clouds']
+    desc_single = ['clear sky', 'thunderstorm']
     
+    weather_verb = ""
+    desc_verb = ""
+
+    # desc_verb =  description in desc_plural
+
+
+
+    print(f"The weather in {data['name']} are '{weather}', mainly '{description}'.")
+    # print(f"The temperatue is {round(temp_c)}°C or {round(temp_f)}°F.")
+
     '''
     lon = data['coord']['lon'] 
     lat = data['coord']['lat']
